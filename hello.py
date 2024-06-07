@@ -20,13 +20,21 @@ __version__ = "0.0.1"
 __author__ = "Marciano Priebe"
 __licence__ = "Unlicense"
 
-current_language = "en_US"
+import os
+
+current_language = os.getenv("LANG", "en_US")[:5]
 
 msg = "Hello, World"
 
 
 if current_language == "pt_BR":
     msg = "Olá, Mundo!"
+elif current_language == "It_IT":
+    msg = "Ciao, Mondo!"
+elif current_language ==  "es_SP":
+    msg = "Hola, Mundo"
+elif current_language == "fr_FR":
+    msg = "Bonjour Monde"
 
 print(msg)
 
